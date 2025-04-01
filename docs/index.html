@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My AI Dev Journey</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -33,7 +32,7 @@
       margin: auto;
     }
 
-    .about, .journey, .links {
+    .about, .journey, .projects, .links {
       background: #fff;
       margin: 2rem 0;
       padding: 1.5rem;
@@ -57,6 +56,18 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    .project {
+      margin-bottom: 1.5rem;
+    }
+
+    .project h3 {
+      margin: 0 0 0.3rem;
+    }
+
+    .project p {
+      margin: 0;
     }
 
     footer {
@@ -84,6 +95,18 @@
       <li><strong>March 2025:</strong> Started exploring LLMs, prompted by curiosity and practical use cases.</li>
       <li><strong>April 2025:</strong> Launched this site to document progress, share insights, and open source experiments.</li>
     </ul>
+  </section>
+
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3><a href="https://github.com/ronjamino/llm-chatbot" target="_blank">LLM Chatbot</a></h3>
+      <p>An AI chatbot built using LangChain and OpenAI APIs.</p>
+    </div>
+    <div class="project">
+      <h3><a href="https://github.com/ronjamino/vector-db-playground" target="_blank">Vector DB Playground</a></h3>
+      <p>Experimenting with vector stores like ChromaDB and embedding search.</p>
+    </div>
   </section>
 
   <section class="links">
