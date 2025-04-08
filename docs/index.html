@@ -13,111 +13,52 @@
       background-color: #f4f4f4;
       color: #333;
     }
-
     header {
       background: #1f2937;
       color: #fff;
       padding: 2rem;
       text-align: center;
     }
-
     h1 {
       margin: 0;
       font-size: 2.5rem;
     }
-
     section {
       padding: 2rem;
       max-width: 800px;
       margin: auto;
     }
-
-    .about, .journey, .projects, .links {
+    .project {
       background: #fff;
       margin: 2rem 0;
       padding: 1.5rem;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    ul {
-      list-style: none;
-      padding: 0;
+    .project h2 {
+      margin-top: 0;
     }
-
-    li {
-      padding: 0.5rem 0;
-    }
-
-    a {
-      color: #1d4ed8;
+    .project a {
+      color: #1f2937;
       text-decoration: none;
+      font-weight: bold;
     }
-
-    a:hover {
+    .project a:hover {
       text-decoration: underline;
-    }
-
-    .project {
-      margin-bottom: 1.5rem;
-    }
-
-    .project h3 {
-      margin: 0 0 0.3rem;
-    }
-
-    .project p {
-      margin: 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #1f2937;
-      color: #fff;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>My AI & LLM Dev Journey</h1>
-    <p>Exploring the world of Artificial Intelligence, LLMs, and Generative AI</p>
+    <h1>My AI Dev Journey</h1>
   </header>
-
-  <section class="about">
-    <h2>About Me</h2>
-    <p>Hi, I'm Ronjamino – a data engineer diving deep into the world of AI. This site tracks my experiments, learning journey, and projects in LLMs and generative AI development.</p>
-  </section>
-
-  <section class="journey">
-    <h2>Journey So Far</h2>
-    <ul>
-      <li><strong>March 2025:</strong> Started exploring LLMs, prompted by curiosity and practical use cases.</li>
-      <li><strong>April 2025:</strong> Launched this site to document progress, share insights, and open source experiments.</li>
-    </ul>
-  </section>
-
-  <section class="projects">
-    <h2>Projects</h2>
+  <section>
     <div class="project">
-      <h3><a href="https://github.com/ronjamino/llm-chatbot" target="_blank">LLM Chatbot</a></h3>
-      <p>An AI chatbot built using LangChain and OpenAI APIs.</p>
+      <h2>TrendMosaic – Multi-Source Tech Trend Aggregator</h2>
+      <p><strong>TrendMosaic</strong> is a platform that aggregates and analyzes tech industry trends by leveraging discussions from various online platforms. It utilizes advanced language models to extract sentiment, summarize discussions, and highlight emerging technologies.</p>
+      <p>Explore more about TrendMosaic on its <a href="trendmosiac_home.html">landing page</a>.</p>
     </div>
-    <div class="project">
-      <h3><a href="https://github.com/ronjamino/vector-db-playground" target="_blank">Vector DB Playground</a></h3>
-      <p>Experimenting with vector stores like ChromaDB and embedding search.</p>
-    </div>
+    <!-- Additional projects can be added here in similar divs -->
   </section>
-
-  <section class="links">
-    <h2>Find Me Online</h2>
-    <ul>
-      <li><a href="https://github.com/ronjamino" target="_blank">GitHub</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Ronjamino</p>
-  </footer>
 </body>
 </html>
