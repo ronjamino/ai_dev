@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Underdogged – Technical Architecture</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #2c3e50;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 1.75rem;
+      margin-top: 2rem;
+    }
+    h3 {
+      margin-top: 1.5rem;
+      color: #1a252f;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    p {
+      line-height: 1.6;
+    }
+    a {
+      color: #2c3e50;
+    }
+    footer {
+      margin-top: 4rem;
+      padding: 1.5rem 0;
+      background: #f0f0f0;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚽ Underdogged – Technical Architecture</h1>
+
+  <p><strong>Underdogged</strong> is a lightweight football analytics tool that surfaces potential mismatches between machine learning predictions and bookmaker odds. It provides head-to-head analysis, recent team form, and model-backed match outcome predictions in a user-friendly web app.</p>
+
+  <h2>🧱 Architecture Overview</h2>
+  <ol>
+    <li><strong>Data Ingestion</strong>
+      <ul>
+        <li>Fixtures scraped from a free football data source</li>
+        <li>Recent match results (for form and head-to-head analysis)</li>
+        <li>Scripted via `fetch_fixtures.py` and scheduled via manual trigger</li>
+      </ul>
+    </li>
+    <li><strong>Data Preparation</strong>
+      <ul>
+        <li>Feature engineering: form stats, goals, venue encoding</li>
+        <li>Label encoding of match outcomes</li>
+        <li>All stored in a `training_data.csv` for reuse</li>
+      </ul>
+    </li>
+    <li><strong>Model Pipeline</strong>
+      <ul>
+        <li>Scikit-learn classifier (e.g. LogisticRegression or RandomForest)</li>
+        <li>Trained on historical Premier League data</li>
+        <li>Outputs `predicted_result`, `predicted_proba`, and `confidence_label`</li>
+      </ul>
+    </li>
+    <li><strong>UI & Interaction Layer</strong>
+      <ul>
+        <li>Streamlit frontend with filters and dropdowns</li>
+        <li>Refresh button triggers re-run of full prediction pipeline</li>
+        <li>Head-to-head + recent form shown side-by-side</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>🗺️ Roadmap</h2>
+  <ul>
+    <li><strong>Phase 1 (✅)</strong> – Manual pipeline, CSV-based outputs, model-driven predictions</li>
+    <li><strong>Phase 2 (🛠)</strong> – Add odds ingestion to highlight betting value</li>
+    <li><strong>Phase 3</strong> – Automate daily pipeline with Airflow or GitHub Actions</li>
+    <li><strong>Phase 4</strong> – Model tuning, better features, possibly xG-based metrics</li>
+    <li><strong>Phase 5</strong> – Publish leaderboard, visualisations, and betting strategy sim</li>
+  </ul>
+
+  <h2>💡 Tech Stack</h2>
+  <ul>
+    <li><strong>Backend:</strong> Python (pandas, scikit-learn), joblib</li>
+    <li><strong>Ingestion:</strong> Custom fetch scripts, local CSVs</li>
+    <li><strong>Model:</strong> scikit-learn classifier with feature engineering</li>
+    <li><strong>Storage:</strong> CSV-based for training and predictions</li>
+    <li><strong>Frontend:</strong> Streamlit</li>
+  </ul>
+
+  <p><strong>🚀 Underdogged</strong> is built to combine ML with football fandom — surfacing surprises the bookies might miss, and keeping matchweek predictions insightful and fun.</p>
+
+  <footer>
+    <p>
+      🔙 <a href="index.html">Return to Homepage</a>
+    </p>
+    <p>
+      Built by <a href="https://github.com/ronjamino" target="_blank">@ronjamino</a> · 
+      <a href="https://github.com/ronjamino/underdogged" target="_blank">GitHub Repo</a>
+    </p>
+  </footer>
+</body>
+</html>
