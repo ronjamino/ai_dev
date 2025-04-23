@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TrendMosaic – Technical Architecture</title>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   TrendMosaic – Technical Architecture
+  </title>
   <style>
-    body {
+   body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f4f9;
       color: #2c3e50;
@@ -48,73 +50,188 @@
       color: #555;
     }
   </style>
-</head>
-<body>
-  <h1>🔧 TrendMosaic – Technical Architecture</h1>
-
-  <p><strong>TrendMosaic</strong> is a multi-source trend intelligence tool that surfaces emerging technologies from real-world discussions. It aggregates content from Reddit, Hacker News, and Stack Overflow, using LLMs to distill insights and identify themes, sentiment, and tools at the heart of the conversation.</p>
-
-  <h2>🧱 Architecture Overview</h2>
+ </head>
+ <body>
+  <h2 string="Overview">
+  </h2>
+  <h1>
+   🔧 TrendMosaic – Technical Architecture
+  </h1>
+  <h2 string="Sources &amp; Aggregation">
+  </h2>
+  <h2 string="Language Model Processing">
+  </h2>
+  <p>
+   <strong>
+    TrendMosaic
+   </strong>
+   is a multi-source trend intelligence tool that surfaces emerging technologies from real-world discussions. It aggregates content from Reddit, Hacker News, and Stack Overflow, using LLMs to distill insights and identify themes, sentiment, and tools at the heart of the conversation.
+  </p>
+  <h2>
+   🧱 Architecture Overview
+  </h2>
   <ol>
-    <li><strong>Data Ingestion</strong>
-      <ul>
-        <li>Sources: Reddit (via PRAW), Hacker News, Stack Overflow (via StackExchange API)</li>
-        <li>Topic-based keyword filtering</li>
-        <li>Modular, extensible fetch layer per source</li>
-      </ul>
-    </li>
-    <li><strong>LLM Processing & Enrichment</strong>
-      <ul>
-        <li>Summarization using GPT-3.5</li>
-        <li>Sentiment classification</li>
-        <li>Tag extraction (emerging tools, platforms, themes)</li>
-        <li>Optional future clustering / deduplication</li>
-      </ul>
-    </li>
-    <li><strong>UI & Interaction Layer</strong>
-      <ul>
-        <li>Streamlit frontend for rapid exploration</li>
-        <li>Topic search + tag filtering</li>
-        <li>Interactive Q&A with context-aware GPT answers</li>
-      </ul>
-    </li>
-    <li><strong>Data Storage (coming soon)</strong>
-      <ul>
-        <li>JSON export for MVP</li>
-        <li>Planned: PostgreSQL or SQLite for structured metadata</li>
-        <li>Planned: Chroma or FAISS for semantic search with vector embeddings</li>
-      </ul>
-    </li>
+   <li>
+    <strong>
+     Data Ingestion
+    </strong>
+    <ul>
+     <li>
+      Sources: Reddit (via PRAW), Hacker News, Stack Overflow (via StackExchange API)
+     </li>
+     <li>
+      Topic-based keyword filtering
+     </li>
+     <li>
+      Modular, extensible fetch layer per source
+     </li>
+    </ul>
+   </li>
+   <li>
+    <strong>
+     LLM Processing &amp; Enrichment
+    </strong>
+    <ul>
+     <li>
+      Summarization using GPT-3.5
+     </li>
+     <li>
+      Sentiment classification
+     </li>
+     <li>
+      Tag extraction (emerging tools, platforms, themes)
+     </li>
+     <li>
+      Optional future clustering / deduplication
+     </li>
+    </ul>
+   </li>
+   <li>
+    <strong>
+     UI &amp; Interaction Layer
+    </strong>
+    <ul>
+     <li>
+      Streamlit frontend for rapid exploration
+     </li>
+     <li>
+      Topic search + tag filtering
+     </li>
+     <li>
+      Interactive Q&amp;A with context-aware GPT answers
+     </li>
+    </ul>
+   </li>
+   <li>
+    <strong>
+     Data Storage (coming soon)
+    </strong>
+    <ul>
+     <li>
+      JSON export for MVP
+     </li>
+     <li>
+      Planned: PostgreSQL or SQLite for structured metadata
+     </li>
+     <li>
+      Planned: Chroma or FAISS for semantic search with vector embeddings
+     </li>
+    </ul>
+   </li>
   </ol>
-
-  <h2>🗺️ Roadmap</h2>
+  <h2>
+   🗺️ Roadmap
+  </h2>
   <ul>
-    <li><strong>Phase 1 (✅)</strong> – Reddit MVP with summarisation, tagging, sentiment, UI</li>
-    <li><strong>Phase 2 (✅)</strong> – Add Hacker News + Stack Overflow integration</li>
-    <li><strong>Phase 3</strong> – Add semantic search (vector DB)</li>
-    <li><strong>Phase 4</strong> – Trend tracking across time and platforms</li>
-    <li><strong>Phase 5</strong> – Exportable digests, alerts, and sharing features</li>
+   <li>
+    <strong>
+     Phase 1 (✅)
+    </strong>
+    – Reddit MVP with summarisation, tagging, sentiment, UI
+   </li>
+   <li>
+    <strong>
+     Phase 2 (✅)
+    </strong>
+    – Add Hacker News + Stack Overflow integration
+   </li>
+   <li>
+    <strong>
+     Phase 3
+    </strong>
+    – Add semantic search (vector DB)
+   </li>
+   <li>
+    <strong>
+     Phase 4
+    </strong>
+    – Trend tracking across time and platforms
+   </li>
+   <li>
+    <strong>
+     Phase 5
+    </strong>
+    – Exportable digests, alerts, and sharing features
+   </li>
   </ul>
-
-  <h2>💡 Tech Stack</h2>
+  <h2>
+   💡 Tech Stack
+  </h2>
   <ul>
-    <li><strong>Backend:</strong> Python, OpenAI API, Langchain (planned)</li>
-    <li><strong>Ingestion:</strong> PRAW (Reddit), HN API, StackExchange API</li>
-    <li><strong>LLM:</strong> GPT-3.5 via OpenAI (summarisation, tagging, Q&A)</li>
-    <li><strong>Storage:</strong> JSON (MVP), planned PostgreSQL + Chroma</li>
-    <li><strong>Frontend:</strong> Streamlit (MVP), planned: React or Next.js</li>
+   <li>
+    <strong>
+     Backend:
+    </strong>
+    Python, OpenAI API, Langchain (planned)
+   </li>
+   <li>
+    <strong>
+     Ingestion:
+    </strong>
+    PRAW (Reddit), HN API, StackExchange API
+   </li>
+   <li>
+    <strong>
+     LLM:
+    </strong>
+    GPT-3.5 via OpenAI (summarisation, tagging, Q&amp;A)
+   </li>
+   <li>
+    <strong>
+     Storage:
+    </strong>
+    JSON (MVP), planned PostgreSQL + Chroma
+   </li>
+   <li>
+    <strong>
+     Frontend:
+    </strong>
+    Streamlit (MVP), planned: React or Next.js
+   </li>
   </ul>
-
-  <p><strong>🚀 TrendMosaic</strong> is built to help technical teams stay ahead of the curve—by surfacing what’s gaining traction before it hits the headlines.</p>
-
+  <p>
+   <strong>
+    🚀 TrendMosaic
+   </strong>
+   is built to help technical teams stay ahead of the curve—by surfacing what’s gaining traction before it hits the headlines.
+  </p>
   <footer>
-    <p>
-      🔙 <a href="index.html">Return to Homepage</a>
-    </p>
-    <p>
-      Built by <a href="https://github.com/ronjamino" target="_blank">@ronjamino</a> · 
-      <a href="https://github.com/ronjamino/trendmosiac" target="_blank">GitHub Repo</a>
-    </p>
+   <p>
+    🔙
+    <a href="index.html">
+     Return to Homepage
+    </a>
+   </p>
+   <p>
+    Built by
+    <a href="https://github.com/ronjamino" target="_blank">
+     @ronjamino
+    </a>
+    ·
+    <a href="https://github.com/ronjamino/trendmosiac" target="_blank">
+     GitHub Repo
+    </a>
+   </p>
   </footer>
-</body>
+ </body>
 </html>
